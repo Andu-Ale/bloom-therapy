@@ -11,6 +11,7 @@
     <header>
         <nav>
             <div class="logo">Bloom Therapy</div>
+<button id="nav-toggle" aria-label="Deschide meniul" class="nav-toggle">☰</button>
             <ul>
         <li><a href="index.html">Acasă</a></li>
         <li><a href="despre.html">Despre Noi</a></li>
@@ -60,12 +61,18 @@
         <p><a href="termeni-si-conditii.html">Termeni și Condiții</a> | <a href="politica-confidentialitate.html">Politica de Confidențialitate</a></p>
     </footer>
 
-     <div id="chat-button" onclick="toggleChat()">💬 Chat</div>
-     <div id="chat-popup" style="display: none;">
-         <p>Serviciul de chat este momentan indisponibil. Vă rugăm să ne contactați prin formularul de programare.</p>
-         <button onclick="toggleChat()">Închide</button>
-     </div>
-
+   <!-- Chat Button & Popup -->
+<div id="chat-button" class="chat-button">💬 Chat</div>
+<div id="chat-popup" class="chat-popup">
+  <div class="chat-header">
+    <span>Chat</span>
+    <button id="close-chat" class="chat-close" aria-label="Închide chat">✖</button>
+  </div>
+  <div class="chat-body">
+    <p>Serviciul de chat este momentan indisponibil. Vă rugăm să ne contactați prin <a href="contact.html">formularul de contact</a>.</p>
+  </div>
+</div>
+s
     <script src="script.js"></script>
 </body>
 </html>
