@@ -70,3 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
     chatPopup.style.display = 'none';
   });
 });
+
+// Mobile Nav Toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.querySelector('nav ul');
+  toggle.addEventListener('click', () => menu.classList.toggle('active'));
+});

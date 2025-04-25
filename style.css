@@ -538,3 +538,16 @@ footer p {
   .chat-popup { width: 280px; right: 10px; bottom: 70px; }
   .chat-button { bottom: 15px; right: 15px; }
 }
+
+
+/* Mobile Nav Toggle */
+.nav-toggle { display: none; background: none; border: none; font-size: 1.8em; color: #333; }
+@media (max-width: 768px) {
+  .nav-toggle { display: block; }
+  nav ul { display: none; flex-direction: column; background-color: #fff; position: absolute; top: 60px; right: 5%; width: 90%; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  nav ul.active { display: flex; }
+}
+
+.hero, .image-slider { position: relative; z-index: 1; }
+.cta-button { position: relative; z-index: 2; }
+.slide-text { z-index: 3; position: absolute; }
