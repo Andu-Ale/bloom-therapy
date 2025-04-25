@@ -1,0 +1,540 @@
+
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+a {
+    color: #0064A6; /* Calming blue */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #ffffff;
+    padding: 10px 5%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #4CAF50; /* Bloom green */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    font-weight: 500;
+    color: #333;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #4CAF50;
+    border-bottom-color: #4CAF50;
+}
+
+/* Main Content */
+main {
+    padding: 0; /* No padding for sections to go full width if needed */
+    max-width: 1200px; /* Limit content width for readability */
+    margin: 20px auto; /* Center main content */
+}
+
+/* Hero Section */
+.hero {
+    background-color: #E8F5E9; /* Light bloom green */
+    color: #333;
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 30px; /* Add margin below hero */
+}
+
+.hero h1 {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    color: #2E7D32; /* Darker green */
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    background-color: #4CAF50; /* Bloom green */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background-color: #388E3C; /* Darker bloom green */
+    text-decoration: none;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 40px 5%;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.features h2 {
+    width: 100%;
+    margin-bottom: 40px;
+    font-size: 2em;
+    color: #333;
+}
+
+.feature-item {
+    flex-basis: 30%; /* Adjust basis for spacing */
+    margin-bottom: 20px; /* Add space below items when wrapped */
+    padding: 15px;
+}
+
+.feature-icon {
+    width: 60px; /* Adjust icon size */
+    height: 60px;
+    margin-bottom: 15px;
+    opacity: 0.8;
+     /* Add placeholder style if using text */
+    background-color: #ddd;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+
+.feature-item h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: #4CAF50;
+}
+
+.feature-item p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+
+/* Testimonial Preview Section */
+.testimonial-preview {
+    background-color: #f0f0f0; /* Light grey */
+    padding: 40px 5%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.testimonial-preview h2 {
+     width: 100%;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+.testimonial-preview blockquote {
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #555;
+    border-left: 3px solid #4CAF50;
+    padding-left: 15px;
+}
+
+/* Content Pages (About, Services, Blog, Programare) */
+.content-page {
+    padding: 40px 5%;
+    background-color: #ffffff;
+    line-height: 1.7;
+    margin: 20px auto; /* Re-add margin for content pages */
+    max-width: 1100px; /* Slightly narrower for text focus */
+}
+
+.content-page h1 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+.content-page h2 {
+    color: #388E3C;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.service-item {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+.service-item:last-child {
+    border-bottom: none;
+}
+
+
+/* Blog Specific */
+.blog-preview {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+.blog-preview:last-child {
+    border-bottom: none;
+}
+.blog-preview h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+     color: #388E3C;
+}
+.blog-preview a {
+    font-weight: bold;
+}
+article .post-meta {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 20px;
+}
+article ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+article li {
+     margin-bottom: 8px;
+}
+
+
+/* Form Styling */
+#booking-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+#booking-form input[type="text"],
+#booking-form input[type="email"],
+#booking-form input[type="tel"],
+#booking-form select,
+#booking-form textarea {
+    width: 100%;
+    max-width: 500px; /* Limit width */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding in width */
+}
+#booking-form input[type="checkbox"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+#booking-form label[for="acord_gdpr"] {
+    display: inline-block;
+    font-weight: normal;
+}
+#booking-form button {
+    margin-top: 10px;
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+    padding: 20px 5%;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+footer a {
+    color: #eee;
+}
+footer a:hover {
+    color: #fff;
+}
+footer p {
+    margin: 5px 0;
+}
+
+
+/* Chat Button */
+#chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    font-size: 1.2em;
+    z-index: 1001;
+}
+
+#chat-popup {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 280px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    padding: 15px;
+    z-index: 1000;
+}
+#chat-popup p {
+    margin: 0 0 10px 0;
+}
+#chat-popup button {
+     background-color: #ccc;
+     border: none;
+     padding: 5px 10px;
+     border-radius: 3px;
+     cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust as needed */
+        left: 0;
+        background-color: white;
+        width: 100%;
+        display: none; /* Hide by default, toggle with JS if needed */
+    }
+     nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+     /* Add a basic menu toggle button if desired */
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+    .feature-item {
+        flex-basis: 80%; /* Take more width on smaller screens */
+    }
+    .hero h1 {
+        font-size: 2.2em;
+    }
+    .hero p {
+        font-size: 1em;
+    }
+    .content-page h1 {
+         font-size: 2em;
+    }
+}
+/* ─── Slider Container ─── */
+.image-slider {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Slides */
+.slide {
+  display: none;
+  position: relative;
+}
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.slide-text {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 1em 1.5em;
+  border-radius: 4px;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+/* Fade animation */
+.fade {
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Dots */
+.slider-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+.dot {
+  display: inline-block;
+  width: 12px; height: 12px;
+  margin: 0 4px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.active-dot, .dot:hover {
+  background: #4CAF50;
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .slide-text { font-size: 1em; padding: 0.75em 1em; bottom: 15%; }
+}
+
+/* After your existing slider styles, add: */
+/* Replace your fixed-height on .image-slider with: */
+.image-slider {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  max-height: 70vh;          /* never taller than 70% of viewport height */
+  height: auto;              /* let it shrink if the viewport is small */
+  overflow: hidden;
+  position: relative;
+}
+
+/* And on the img: */
+.slide img {
+  width: 100%;
+  height: auto;              /* maintain natural aspect ratio */
+  max-height: 70vh;          /* cap to same 70% viewport height */
+  object-fit: cover;         /* fill container, but won’t stretch beyond its own ratio */
+  object-position: center;   /* crop equally from top/bottom or sides */
+}
+
+
+/* In your mobile media query, you can make it shorter: */
+@media (max-width: 600px) {
+  .image-slider {
+    height: 250px;
+  }
+}
+
+
+
+/* Blog post header images */
+.content-page article img.post-image {
+  width: 100%;
+  max-width: 800px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+
+
+
+
+/* Chat Popup Styles */
+.chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.4em;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  max-width: 90%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+.chat-header {
+  background: #4CAF50;
+  color: #fff;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.chat-close {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+.chat-body {
+  padding: 12px;
+  font-size: 0.95em;
+  color: #333;
+}
+@media (max-width: 600px) {
+  .chat-popup { width: 280px; right: 10px; bottom: 70px; }
+  .chat-button { bottom: 15px; right: 15px; }
+}

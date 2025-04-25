@@ -1,0 +1,214 @@
+
+Instrucțiuni pentru adăugarea îmbunătățirilor:
+
+1.  **Slider de Imagini:**
+    * **HTML:** Copiază și lipește următorul bloc de cod în fișierul `index.html`, în interiorul tag-ului `<main>`, de preferat imediat după secțiunea `<section class="hero">`:
+        ```html
+        
+<section class="image-slider">
+    <div class="slide fade">
+        <img src="https://placehold.co/1200x400/E8F5E9/4CAF50?text=Bloom+Therapy\n+Spatiu+Sigur" alt="Slider Image 1 - Spatiu Sigur">
+        <div class="slide-text">Un spațiu sigur pentru vindecare și creștere</div>
+    </div>
+    <div class="slide fade">
+        <img src="https://placehold.co/1200x400/CFD8DC/37474F?text=Bloom+Therapy\n+Terapie+Online" alt="Slider Image 2 - Terapie Online">
+         <div class="slide-text">Terapie online accesibilă, adaptată vieții tale</div>
+    </div>
+    <div class="slide fade">
+        <img src="https://placehold.co/1200x400/B2DFDB/00796B?text=Bloom+Therapy\n+Expertiza+Specializata" alt="Slider Image 3 - Expertiza">
+        <div class="slide-text">Expertiză în anxietate și depresie</div>
+    </div>
+    <!-- Add Navigation Dots -->
+     <div style="text-align:center; margin-top: 10px;">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+</section>
+
+        ```
+    * **CSS:** Adaugă următorul cod la sfârșitul fișierului `style.css`:
+        ```css
+        
+/* Image Slider Styles */
+.image-slider {
+    max-width: 1200px; /* Match main content width */
+    position: relative;
+    margin: 20px auto; /* Center and add space */
+    overflow: hidden; /* Hide overflow if images are slightly different sizes */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.slide {
+    display: none; /* Hide all slides initially */
+}
+
+.slide img {
+    vertical-align: middle;
+    width: 100%;
+    height: 400px; /* Fixed height for consistency */
+    object-fit: cover; /* Cover the area without distorting aspect ratio */
+}
+
+.slide-text {
+    color: #fff;
+    font-size: 1.5em;
+    padding: 15px 20px;
+    position: absolute;
+    bottom: 20px;
+    width: 80%;
+    left: 10%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 5px;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Dots */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active-dot, .dot:hover {
+  background-color: #717171;
+}
+
+        ```
+    * **JavaScript:** Adaugă următorul cod la sfârșitul fișierului `script.js`:
+        ```javascript
+        
+// --- Image Slider Logic ---
+let slideIndex = 0;
+let slideInterval;
+
+showSlides(); // Initial call to start
+
+function showSlides() {
+    let i;
+    let slides = document.querySelectorAll(".image-slider .slide");
+    let dots = document.querySelectorAll(".dot");
+    if (slides.length === 0) return; // Exit if no slides found
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active-dot", "");
+    }
+
+    slides[slideIndex-1].style.display = "block";
+    if (dots.length > 0) {
+      dots[slideIndex-1].className += " active-dot";
+    }
+
+    // Clear previous interval and set a new one
+    clearInterval(slideInterval);
+    slideInterval = setInterval(showSlides, 5000); // Change image every 5 seconds
+}
+
+// Function to go to a specific slide (for dots)
+function currentSlide(n) {
+  clearInterval(slideInterval); // Stop auto sliding
+  slideIndex = n; // Set index to the clicked dot's slide
+  showSlidesManual(); // Show the specific slide immediately
+  slideInterval = setInterval(showSlides, 5000); // Restart auto sliding
+}
+
+// Slightly modified showSlides for manual navigation without incrementing index
+function showSlidesManual() {
+    let i;
+    let slides = document.querySelectorAll(".image-slider .slide");
+    let dots = document.querySelectorAll(".dot");
+     if (slides.length === 0) return;
+
+    if (slideIndex > slides.length) {slideIndex = 1}
+    if (slideIndex < 1) {slideIndex = slides.length}
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active-dot", "");
+    }
+
+    slides[slideIndex-1].style.display = "block";
+     if (dots.length > 0) {
+       dots[slideIndex-1].className += " active-dot";
+     }
+}
+
+// --- End Image Slider ---
+
+        ```
+    * **Imagini:** Linkurile actuale (`placehold.co/...`) sunt doar pentru exemplu. Va trebui să găsești 3 imagini potrivite (calme, profesionale, relevante pentru terapie/stare de bine) de pe site-uri precum Unsplash, Pexels sau altele care oferă imagini gratuite. Descarcă-le, adaugă-le în folderul `bloom_therapy_website` (poate într-un subfolder `assets/images`) și înlocuiește URL-urile `https://placehold.co/...` din codul HTML cu căile către fișierele tale (ex: `assets/images/slider1.jpg`).
+
+2.  **Imagini pentru Blog:**
+    * Găsește imagini relevante pentru anxietate și depresie (surse: Unsplash, Pexels etc.). Salvează-le în folderul site-ului (ex: `assets/images`).
+    * În `blog-post-anxietate.html`, adaugă acest cod HTML (după titlu sau un paragraf introductiv), înlocuind `src`-ul cu calea imaginii tale:
+        ```html
+        
+<img src="https://placehold.co/800x300/CFD8DC/37474F?text=Imagine+Anxietate" alt="Ilustrație Anxietate" style="margin-bottom: 15px; border-radius: 5px;">
+
+        ```
+    * În `blog-post-depresie.html`, adaugă acest cod HTML, înlocuind `src`-ul cu calea imaginii tale:
+        ```html
+        
+<img src="https://placehold.co/800x300/B2DFDB/00796B?text=Imagine+Depresie" alt="Ilustrație Depresie" style="margin-bottom: 15px; border-radius: 5px;">
+
+        ```
+
+3.  **Hartă Google Maps:**
+    * Copiază și lipește următorul bloc de cod în fișierul `programare.html`, la sfârșitul secțiunii `<main>`, înainte de `<footer>`:
+        ```html
+        
+<section class="map-section" style="margin-top: 40px;">
+    <h2>Locație Fictivă - Punct de Reper</h2>
+    <p>Serviciile noastre sunt exclusiv online, dar pentru referință, ne puteți considera localizați central în Sibiu.</p>
+    <div class="map-container" style="width: 100%; max-width: 800px; margin: 20px auto; border: 1px solid #ccc;">
+        <iframe
+            width="100%"
+            height="450"
+            style="border:0"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=Piața+Mare+Sibiu+Romania">
+        </iframe>
+        <!-- Note: For a real deployment without an API key, you can often get an embed code directly from Google Maps by searching a location, clicking Share -> Embed a map -->
+         <p style="font-size: 0.8em; text-align: center; margin-top: 5px;">Puteți înlocui acest cod iframe cu unul generat direct din Google Maps pentru o locație specifică.</p>
+    </div>
+</section>
+
+        ```
+    * **Notă:** Codul iframe generat aici folosește o metodă simplă de embed cu o căutare (`q=Piața+Mare+Sibiu+Romania`). Pentru a afișa un marker specific sau a nu depinde de o cheie API (pe care am lăsat-o ca `YOUR_API_KEY`), cea mai simplă metodă este:
+        1. Mergi pe Google Maps în browser.
+        2. Caută o locație (ex: Piața Mare Sibiu sau o adresă fictivă apropiată).
+        3. Click pe butonul "Share" (Partajați).
+        4. Selectează tab-ul "Embed a map" (Încorporați o hartă).
+        5. Copiază codul `<iframe>` oferit de Google Maps.
+        6. Înlocuiește codul `<iframe>...</iframe>` din snippetul de mai sus cu cel copiat de pe Google Maps.
+
+4.  **Butonul de Chat:**
+    * Nu necesită modificări de cod funcționale. Codul existent în `script.js` și `index.html` (și celelalte pagini) deja creează butonul și fereastra pop-up care apare/dispare la click, simulând deschiderea unui chat (fără funcționalitate reală de chat). Stilul pop-up-ului poate fi ajustat în `style.css` (în secțiunea `#chat-popup`) dacă dorești.
+
+Salvează toate fișierele după ce faci modificările. Deschide `index.html` în browser pentru a vedea prototipul actualizat.

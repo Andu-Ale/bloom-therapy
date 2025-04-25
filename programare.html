@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programare - Bloom Therapy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Bloom Therapy</div>
+            <ul>
+        <li><a href="index.html">Acasă</a></li>
+        <li><a href="despre.html">Despre Noi</a></li>
+        <li><a href="servicii.html">Servicii</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        
+      </ul>
+        </nav>
+    </header>
+
+    <main class="content-page">
+        <h1>Programare Consultație Inițială</h1>
+        <p>Faceți primul pas spre o stare de bine îmbunătățită. Completați formularul de mai jos pentru a solicita o consultație inițială gratuită (15-20 minute) sau pentru a adresa întrebări. Vă vom contacta în cel mai scurt timp posibil pentru a stabili detaliile.</p>
+        <p>Toate informațiile sunt tratate cu strictă confidențialitate.</p>
+
+        <form id="booking-form" onsubmit="alert('Formularul a fost trimis (simulare). Vă mulțumim!'); return false;">
+             <label for="nume">Nume complet:</label><br>
+             <input type="text" id="nume" name="nume" required><br><br>
+
+             <label for="email">Adresă de email:</label><br>
+             <input type="email" id="email" name="email" required><br><br>
+
+             <label for="telefon">Număr de telefon:</label><br>
+             <input type="tel" id="telefon" name="telefon"><br><br>
+
+             <label for="serviciu">Tipul de serviciu dorit:</label><br>
+             <select id="serviciu" name="serviciu">
+                 <option value="consultatie_gratuita">Consultație inițială gratuită</option>
+                 <option value="anxietate">Consiliere pentru Anxietate</option>
+                 <option value="depresie">Consiliere pentru Depresie</option>
+                 <option value="stres">Managementul Stresului</option>
+                 <option value="alta">Altă solicitare / Întrebare</option>
+             </select><br><br>
+
+             <label for="mesaj">Mesajul dumneavoastră (opțional):</label><br>
+             <textarea id="mesaj" name="mesaj" rows="4" cols="50"></textarea><br><br>
+
+             <input type="checkbox" id="acord_gdpr" name="acord_gdpr" required>
+             <label for="acord_gdpr">Sunt de acord cu <a href="politica-confidentialitate.html" target="_blank">Politica de Confidențialitate</a> și prelucrarea datelor mele.</label><br><br>
+
+             <button type="submit" class="cta-button">Trimite Solicitarea</button>
+        </form>
+        <p style="margin-top: 20px;">Alternativ, ne puteți contacta la adresa de email: contact@bloomtherapy.ro (exemplu)</p>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bloom Therapy Sibiu. Toate drepturile rezervate.</p>
+        <p><a href="termeni-si-conditii.html">Termeni și Condiții</a> | <a href="politica-confidentialitate.html">Politica de Confidențialitate</a></p>
+    </footer>
+
+     <div id="chat-button" onclick="toggleChat()">💬 Chat</div>
+     <div id="chat-popup" style="display: none;">
+         <p>Serviciul de chat este momentan indisponibil. Vă rugăm să ne contactați prin formularul de programare.</p>
+         <button onclick="toggleChat()">Închide</button>
+     </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
