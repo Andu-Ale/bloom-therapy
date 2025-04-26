@@ -465,8 +465,15 @@ footer p {
 
 /* In your mobile media query, you can make it shorter: */
 @media (max-width: 600px) {
+.cta-button {
+    padding: 12px 20px; /* Reduce padding */
+    font-size: 0.9em;   /* Reduce font size */
+    line-height: 1.4;   /* Adjust line height for better wrapping */
+    /* Optional: Ensure button doesn't stretch unnecessarily */
+    /* width: auto;  */
+    /* max-width: 90%; */ /* Example: limit width if needed */
   .image-slider {
-    height: 250px;
+    height: 350px;
   }
 }
 
